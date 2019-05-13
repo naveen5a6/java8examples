@@ -1,6 +1,8 @@
-package com.streams.main;
+package com.streams.collectorsex;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
@@ -16,7 +18,7 @@ import com.streams.models.Product;
 
 
 
-public class Example3 {
+public class CollectorsGroupingAndPartitioning {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -44,7 +46,6 @@ System.out.println("Max Price product ::"+maxProduct.get().getDescription());
 
 //summarizing int
 IntSummaryStatistics statics=products.stream().collect(Collectors.summarizingInt(p->p.getPrice()));
-
 
 
 
@@ -110,7 +111,7 @@ products.stream().collect(Collectors
 
 System.out.println("type max price product:: "+typeMapmaxBy);
 
-
+//Collecting and then is After Collecting the elements in the Stream next what to do
 		Map<String, Product> collectingAndThen = products.stream()
 				.collect(Collectors.groupingBy(p -> p.getType(), Collectors.collectingAndThen(
 						Collectors.maxBy(Comparator.comparingInt(Product::getPrice)), Optional::get)));
@@ -123,6 +124,16 @@ Map<Boolean,List<Product>> partionEx=products.stream().collect(Collectors.partit
 
 System.out.println(partionEx);
 System.out.println(partionEx.get(true));
+
+List<Integer>  givenList=Arrays.asList(6,7,8);
+
+List<Integer> result = givenList.stream().filter(n->n>6)
+.collect(Collectors.collectingAndThen(Collectors.toList(),Collections::<Integer>unmodifiableList));
+//result.add(9);
+System.out.println("Final Result :: "+result);
+
+
+
 
 
 

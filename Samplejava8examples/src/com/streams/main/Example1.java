@@ -50,6 +50,8 @@ public class Example1 {
 				.collect(Collectors.toList());
 		System.out.println(unique);
 		unique.forEach(System.out::println);
+		
+		
 
 
 	}

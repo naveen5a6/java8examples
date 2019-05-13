@@ -1,10 +1,22 @@
 package com.streams.models;
 
-public class Product {
-	
+public class ProductWithTax {
 	private String description;
 	private int price;
 	private String type;
+	
+	private float tax;
+	public float getTax() {
+		return tax;
+	}
+	public void setTax(float tax) {
+		this.tax = tax;
+	}
+	@Override
+	public String toString() {
+		return "ProductWithTax [description=" + description + ", price=" + price + ", type=" + type + ", tax=" + tax
+				+ "]";
+	}
 	public String getType() {
 		return type;
 	}
@@ -23,17 +35,5 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public Product(String description, int price, String type) {
-		super();
-		this.description = description;
-		this.price = price;
-		this.type=type;
-	}
-	@Override
-	public String toString() {
-		return "Product [description=" + description + ", price=" + price + ", type=" + type + "]";
-	}
 	
-	
-
 }
