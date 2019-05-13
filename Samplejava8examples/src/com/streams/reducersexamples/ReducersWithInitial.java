@@ -1,4 +1,4 @@
-package com.streams.reducersex;
+package com.streams.reducersexamples;
 
 import java.util.Arrays;
 import java.util.List;

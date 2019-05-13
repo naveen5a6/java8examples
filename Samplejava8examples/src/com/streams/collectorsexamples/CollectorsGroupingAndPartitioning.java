@@ -1,4 +1,4 @@
-package com.streams.collectorsex;
+package com.streams.collectorsexamples;
 
 import java.util.Arrays;
 import java.util.Collection;
